@@ -1,12 +1,16 @@
 const assertEqual = (actual, expected) => {
-  actual === expected ? console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`) : console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
-};
+  if (actual === expected) {
+    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
+  } else {
+    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
+  }
+};  
 
 let copyArray;
 let tailArray = [];
 
 const tail = fullArray => {
-  copyArray = fullArray;
+  copyArray = [...fullArray];
   for (let i = 1; i < fullArray.length; i++) {
     tailArray.push(fullArray[i]);
   }
