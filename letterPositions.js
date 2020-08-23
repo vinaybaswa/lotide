@@ -14,18 +14,11 @@ const eqArrays = function(arrayOne, arrayTwo) {
   return false;
 };
 
-const assertArraysEqual = function(source, result) {
-  if (source.length === result.length) {
-    let trueArray = [];
-    for (let i = 0; i < source.length; i++) {
-      let j = i;
-      source[i] === result[j] ? trueArray.push(true) : null;
-    }
-    if (trueArray.length === source.length) {
-      console.log(`✅✅✅ Assertion Passed: ${source} === ${result}`);
-    } else {
-      console.log(`🛑🛑🛑 Assertion Failed: ${source} !== ${result}`);
-    }
+const assertArraysEqual = function(actual, expected) {
+  if (eqArrays(actual, expected) === true) {
+    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
+  } else {
+    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
   }
 };
 
@@ -50,12 +43,6 @@ const valuesArr = Object.values(resultCopy);
 
 
 // Asssertion
-console.log(eqArrays(keysArr, ['h', 'e', 'l', 'o']));
-console.log(eqArrays(valuesArr[0], ["0"]));
-console.log(eqArrays(valuesArr[1], "1"));
-console.log(eqArrays(valuesArr[2], ["2", "3"]));
-console.log(eqArrays(valuesArr[3], ["4"]));
-
 assertArraysEqual(keysArr, ['h', 'e', 'l', 'o']);
 assertArraysEqual(valuesArr[0], ["0"]);
 assertArraysEqual(valuesArr[1], "1");
