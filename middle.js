@@ -6,17 +6,14 @@ const assertArraysEqual = function(actual, expected) {
   }
 };
 
-const eqArrays = function(arrayOne, arrayTwo) {
-  if (arrayOne.length === arrayTwo.length) {
-    let trueArray = [];
-    for (let i = 0; i < arrayOne.length; i++) {
-      let j = i;
-      arrayOne[i] === arrayTwo[j] ? trueArray.push(true) : null;
+const eqArrays = function(arrOne, arrTwo) {
+  if (arrOne.length === arrTwo.length) {
+    for (let i = 0; i < arrOne.length; i++) {
+      if (arrOne[i] !== arrTwo[i]) {
+        return false;
+      }
     }
-
-    if (trueArray.length === arrayOne.length) {
-      return true;
-    }
+    return true;
   }
   return false;
 };
@@ -45,7 +42,7 @@ assertArraysEqual(middle([1]), []); // => ✅✅✅
 assertArraysEqual(middle([1, 2]), []); // => ✅✅✅
 assertArraysEqual(middle([1, 2, 3]), [2]); // => ✅✅✅
 assertArraysEqual(middle([1, 2, 3, 4, 5]), [4]); // => 🛑🛑🛑
-assertArraysEqual(middle([1, 2, 3, 4]), [2, 3]); // => PASS
+assertArraysEqual(middle([1, 2, 3, 4]), [2, 3]); // => ✅✅✅
 assertArraysEqual(middle([1, 2, 3, 4, 5, 6]), [1, 4]); // => 🛑🛑🛑
 
 

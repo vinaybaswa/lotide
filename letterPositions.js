@@ -1,15 +1,12 @@
 
-const eqArrays = function(arrayOne, arrayTwo) {
-  if (arrayOne.length === arrayTwo.length) {
-    let trueArray = [];
-    for (let i = 0; i < arrayOne.length; i++) {
-      let j = i;
-      arrayOne[i] === arrayTwo[j] ? trueArray.push(true) : null;
+const eqArrays = function(arrOne, arrTwo) {
+  if (arrOne.length === arrTwo.length) {
+    for (let i = 0; i < arrOne.length; i++) {
+      if (arrOne[i] !== arrTwo[i]) {
+        return false;
+      }
     }
-
-    if (trueArray.length === arrayOne.length) {
-      return true;
-    }
+    return true;
   }
   return false;
 };
