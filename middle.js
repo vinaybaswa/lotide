@@ -2,9 +2,8 @@ const assertArraysEqual = require("./assertArraysEqual")
 
 const middle = function(givenArr) {
   const catchArr = [];
-  const arrlength = givenArr.length;
-  const magicNum = arrlength / 2;
-  if (arrlength > 2) {
+  const magicNum = givenArr.length / 2;
+  if (givenArr.length > 2) {
     if (magicNum === Math.floor(magicNum)) {
       catchArr.push(givenArr[magicNum - 1]);
       catchArr.push(givenArr[magicNum]);

@@ -1,3 +1,3 @@
-const head = array => { return array.shift(0) };
+const head = someData => someData[0];
 
 module.exports = head;

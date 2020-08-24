@@ -1,9 +1,9 @@
-const tail = fullArray => {
-  let tailArray = [];
-  for (let i = 1; i < fullArray.length; i++) {
-    tailArray.push(fullArray[i]);
+const tail = someData => {
+  let dataTail = [];
+  for (let i = 1; i < someData.length; i++) {
+    dataTail.push(someData[i]);
   }
-  return tailArray;
+  return dataTail;
 };
 
 module.exports = tail;
